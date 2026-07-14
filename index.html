@@ -1,0 +1,2294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Negocios Dulces - Restaurante gourmet, banquetes exclusivos y eventos personalizados en Queretaro. Experiencias gastronomicas de lujo.">
+    <title>Negocios Dulces | Restaurante Gourmet, Banquetes &amp; Eventos Exclusivos</title>
+    <style>
+        /* ============================================================
+           NEGOCIOS DULCES - LUXURY FOOD EDITORIAL / MAGAZINE
+           Design: Print-inspired editorial with serif typography,
+                   asymmetric grids, drop caps, decorative rules,
+                   warm cream/gold/coral palette on paper texture.
+           NO glassmorphism. NO gradient orbs. NO dark theme.
+           ============================================================ */
+
+        /* === RESET === */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gold: #FFD700;
+            --gold-dark: #B8960F;
+            --orange: #FFA500;
+            --coral: #FF6B35;
+            --pink: #FF69B4;
+            --deep-pink: #FF1493;
+            --cream: #FFF5E1;
+            --light-cream: #FAEBD7;
+            --chocolate: #8B4513;
+            --chocolate-light: #A0522D;
+            --charcoal: #2C2C2C;
+            --elegant-black: #1a1a1a;
+
+            --text-primary: #2C2C2C;
+            --text-body: #4A3728;
+            --text-muted: #8A7A6A;
+            --surface: #FFFDF8;
+            --surface-warm: #FFF8EE;
+            --paper: #FFFAF0;
+
+            --font-serif: Georgia, 'Times New Roman', 'Palatino Linotype', serif;
+            --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+            --transition-elegant: 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+            --transition-base: 0.3s ease;
+            --transition-fast: 0.15s ease;
+
+            --max-width: 1200px;
+            --nav-height: 64px;
+
+            --rule-color: #D4B896;
+            --rule-color-light: #E8D5BC;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: var(--nav-height);
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--text-body);
+            background-color: var(--paper);
+            /* Subtle paper texture via CSS noise */
+            background-image:
+                url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            overflow-x: hidden;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            html { scroll-behavior: auto; }
+        }
+
+        /* === UTILITY === */
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .container--wide {
+            max-width: 1400px;
+        }
+
+        .container--narrow {
+            max-width: 800px;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* === EDITORIAL DECORATIVE ELEMENTS === */
+
+        /* Thin ornamental rule with diamond */
+        .editorial-rule {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin: 48px auto;
+            max-width: 400px;
+        }
+        .editorial-rule::before,
+        .editorial-rule::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--rule-color);
+        }
+        .editorial-rule__ornament {
+            width: 8px;
+            height: 8px;
+            background: var(--gold-dark);
+            transform: rotate(45deg);
+            flex-shrink: 0;
+        }
+
+        /* Simple thin line */
+        .thin-rule {
+            border: none;
+            height: 1px;
+            background: var(--rule-color);
+            margin: 40px 0;
+        }
+
+        .thin-rule--gold {
+            background: linear-gradient(90deg, transparent, var(--gold-dark), transparent);
+        }
+
+        .thin-rule--short {
+            max-width: 120px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Drop cap */
+        .drop-cap::first-letter {
+            float: left;
+            font-family: var(--font-serif);
+            font-size: 4.2em;
+            line-height: 0.8;
+            padding-right: 12px;
+            padding-top: 4px;
+            color: var(--chocolate);
+            font-weight: 400;
+        }
+
+        /* Section label (small caps editorial badge) */
+        .section-label {
+            display: block;
+            font-family: var(--font-sans);
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-dark);
+            margin-bottom: 16px;
+        }
+
+        /* Serif heading style */
+        .heading-serif {
+            font-family: var(--font-serif);
+            color: var(--charcoal);
+            font-weight: 400;
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+        }
+
+        /* Italic subtitle */
+        .subtitle-italic {
+            font-family: var(--font-serif);
+            font-style: italic;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        /* === NAVIGATION === */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--nav-height);
+            background: rgba(255,250,240,0.95);
+            border-bottom: 1px solid var(--rule-color-light);
+            z-index: 1000;
+            transition: background var(--transition-base), box-shadow var(--transition-base);
+        }
+
+        .nav--scrolled {
+            background: rgba(255,250,240,0.98);
+            box-shadow: 0 2px 20px rgba(139,69,19,0.06);
+        }
+
+        .nav__inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav__brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+
+        .nav__brand-name {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: var(--charcoal);
+            letter-spacing: 0.02em;
+        }
+
+        .nav__brand-name em {
+            font-style: italic;
+            color: var(--chocolate);
+        }
+
+        .nav__menu {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            list-style: none;
+        }
+
+        .nav__link {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 14px;
+            color: var(--text-body);
+            text-decoration: none;
+            font-family: var(--font-sans);
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            border-bottom: 1px solid transparent;
+            transition: color var(--transition-fast), border-color var(--transition-fast);
+            cursor: pointer;
+        }
+
+        .nav__link:hover,
+        .nav__link:focus-visible {
+            color: var(--chocolate);
+            border-bottom-color: var(--gold-dark);
+        }
+
+        .nav__link:focus-visible {
+            outline: 2px solid var(--coral);
+            outline-offset: 2px;
+        }
+
+        .nav__cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 24px;
+            background: transparent;
+            color: var(--chocolate);
+            text-decoration: none;
+            font-family: var(--font-sans);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: 1px solid var(--chocolate);
+            transition: background var(--transition-base), color var(--transition-base);
+            cursor: pointer;
+        }
+
+        .nav__cta:hover {
+            background: var(--chocolate);
+            color: var(--cream);
+        }
+
+        .nav__cta:focus-visible {
+            outline: 2px solid var(--coral);
+            outline-offset: 3px;
+        }
+
+        /* Hamburger */
+        .nav__toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            width: 44px;
+            height: 44px;
+            padding: 10px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .nav__toggle:focus-visible {
+            outline: 2px solid var(--coral);
+            outline-offset: 2px;
+        }
+
+        .nav__toggle-bar {
+            width: 22px;
+            height: 1.5px;
+            background: var(--charcoal);
+            transition: transform var(--transition-base), opacity var(--transition-fast);
+            transform-origin: center;
+        }
+
+        .nav__toggle--active .nav__toggle-bar:nth-child(1) {
+            transform: translateY(6.5px) rotate(45deg);
+        }
+        .nav__toggle--active .nav__toggle-bar:nth-child(2) {
+            opacity: 0;
+        }
+        .nav__toggle--active .nav__toggle-bar:nth-child(3) {
+            transform: translateY(-6.5px) rotate(-45deg);
+        }
+
+        @media (max-width: 768px) {
+            .nav__toggle { display: flex; }
+
+            .nav__menu {
+                position: fixed;
+                top: var(--nav-height);
+                right: -100%;
+                width: 280px;
+                height: calc(100vh - var(--nav-height));
+                height: calc(100dvh - var(--nav-height));
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                padding: 32px 24px;
+                background: var(--paper);
+                border-left: 1px solid var(--rule-color-light);
+                transition: right var(--transition-base);
+                overflow-y: auto;
+            }
+
+            .nav__menu--open {
+                right: 0;
+            }
+
+            .nav__link {
+                padding: 16px 0;
+                font-size: 0.9rem;
+                border-bottom: 1px solid var(--rule-color-light);
+            }
+
+            .nav__cta {
+                margin-top: 24px;
+                justify-content: center;
+                padding: 14px 24px;
+            }
+        }
+
+        /* Mobile overlay */
+        .nav-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(44,44,44,0.3);
+            z-index: 999;
+            opacity: 0;
+            transition: opacity var(--transition-base);
+        }
+        .nav-overlay--visible {
+            display: block;
+            opacity: 1;
+        }
+
+        /* === COVER / HERO — Full-bleed magazine cover === */
+        .cover {
+            position: relative;
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+            padding: 0;
+            overflow: hidden;
+            background: var(--elegant-black);
+        }
+
+        .cover__bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .cover__bg svg {
+            width: 100%;
+            height: 100%;
+            transition: transform 12s ease;
+        }
+
+        .cover:hover .cover__bg svg {
+            transform: scale(1.03);
+        }
+
+        /* Dark gradient overlay at bottom for text legibility */
+        .cover__overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to top,
+                rgba(26,26,26,0.85) 0%,
+                rgba(26,26,26,0.5) 35%,
+                rgba(26,26,26,0.15) 65%,
+                rgba(26,26,26,0.05) 100%
+            );
+            z-index: 1;
+        }
+
+        .cover__content {
+            position: relative;
+            z-index: 2;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: calc(var(--nav-height) + 60px) 40px 80px;
+            width: 100%;
+            animation: coverFadeIn 1.2s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+        }
+
+        @keyframes coverFadeIn {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .cover__label {
+            font-family: var(--font-sans);
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .cover__label::before {
+            content: '';
+            display: inline-block;
+            width: 40px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        .cover__title {
+            font-family: var(--font-serif);
+            font-size: clamp(2.8rem, 7vw, 5.5rem);
+            font-weight: 400;
+            line-height: 1.05;
+            color: #FFFAF0;
+            letter-spacing: -0.02em;
+            max-width: 700px;
+            margin-bottom: 20px;
+        }
+
+        .cover__title em {
+            font-style: italic;
+            color: var(--gold);
+        }
+
+        .cover__subtitle {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+            color: rgba(255,250,240,0.7);
+            max-width: 520px;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .cover__actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .btn-editorial {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 36px;
+            font-family: var(--font-sans);
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: background var(--transition-base), color var(--transition-base), transform var(--transition-base);
+        }
+
+        .btn-editorial:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 3px;
+        }
+
+        .btn-editorial--primary {
+            background: var(--coral);
+            color: #fff;
+        }
+
+        .btn-editorial--primary:hover {
+            background: #E55A28;
+            transform: translateY(-2px);
+        }
+
+        .btn-editorial--outline {
+            background: transparent;
+            color: rgba(255,250,240,0.9);
+            border: 1px solid rgba(255,250,240,0.4);
+        }
+
+        .btn-editorial--outline:hover {
+            background: rgba(255,250,240,0.1);
+            border-color: rgba(255,250,240,0.7);
+        }
+
+        .btn-editorial--gold {
+            background: transparent;
+            color: var(--chocolate);
+            border: 1px solid var(--chocolate);
+        }
+
+        .btn-editorial--gold:hover {
+            background: var(--chocolate);
+            color: var(--cream);
+        }
+
+        .btn-editorial--coral-fill {
+            background: var(--coral);
+            color: #fff;
+        }
+
+        .btn-editorial--coral-fill:hover {
+            background: #E55A28;
+            transform: translateY(-1px);
+        }
+
+        /* Cover stats bar */
+        .cover__stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 48px;
+            padding-top: 28px;
+            border-top: 1px solid rgba(255,250,240,0.15);
+        }
+
+        .cover__stat {
+            text-align: left;
+        }
+
+        .cover__stat-value {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            color: var(--gold);
+            line-height: 1;
+        }
+
+        .cover__stat-label {
+            font-family: var(--font-sans);
+            font-size: 0.72rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: rgba(255,250,240,0.5);
+            margin-top: 6px;
+        }
+
+        @media (max-width: 768px) {
+            .cover__content {
+                padding: calc(var(--nav-height) + 40px) 24px 48px;
+            }
+            .cover__stats {
+                gap: 24px;
+                flex-wrap: wrap;
+            }
+            .cover__stat-value {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* === INTRODUCTION — Two-column editorial with drop cap === */
+        .intro {
+            padding: 100px 0;
+            background: var(--paper);
+        }
+
+        .intro__inner {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+            text-align: center;
+        }
+
+        .intro__heading {
+            font-size: clamp(2rem, 4.5vw, 3rem);
+            margin-bottom: 12px;
+        }
+
+        .intro__tagline {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            margin-bottom: 48px;
+        }
+
+        .intro__columns {
+            column-count: 2;
+            column-gap: 48px;
+            column-rule: 1px solid var(--rule-color-light);
+            text-align: left;
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--text-body);
+        }
+
+        .intro__columns p {
+            margin-bottom: 1em;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        @media (max-width: 768px) {
+            .intro {
+                padding: 64px 0;
+            }
+            .intro__columns {
+                column-count: 1;
+            }
+        }
+
+        /* === MENU / SERVICES — Luxury restaurant menu style === */
+        .menu-section {
+            padding: 100px 0;
+            background: var(--cream);
+            background-image:
+                url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+        }
+
+        .menu-section__header {
+            text-align: center;
+            margin-bottom: 72px;
+        }
+
+        .menu-section__title {
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            margin-bottom: 12px;
+        }
+
+        .menu-section__subtitle {
+            font-size: clamp(1rem, 2vw, 1.15rem);
+        }
+
+        /* Asymmetric service grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+
+        .service-item {
+            padding: 48px 40px;
+            border: 1px solid var(--rule-color-light);
+            margin-top: -1px;
+            margin-left: -1px;
+            position: relative;
+            transition: background var(--transition-elegant);
+            cursor: default;
+        }
+
+        .service-item:hover {
+            background: rgba(255,215,0,0.04);
+        }
+
+        .service-item__number {
+            font-family: var(--font-serif);
+            font-size: 3.5rem;
+            line-height: 1;
+            color: var(--rule-color-light);
+            margin-bottom: 16px;
+            font-weight: 400;
+        }
+
+        .service-item__name {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--charcoal);
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .service-item__desc {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .service-item__details {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .service-item__detail {
+            font-size: 0.85rem;
+            color: var(--text-body);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .service-item__detail::before {
+            content: '';
+            width: 16px;
+            height: 1px;
+            background: var(--gold-dark);
+            flex-shrink: 0;
+        }
+
+        /* Featured service - spans full width */
+        .service-item--featured {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+            background: var(--light-cream);
+        }
+
+        .service-item--featured:hover {
+            background: var(--light-cream);
+        }
+
+        .service-item--featured .service-item__visual {
+            aspect-ratio: 4/3;
+            overflow: hidden;
+        }
+
+        .service-item--featured .service-item__visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-elegant);
+        }
+
+        .service-item--featured:hover .service-item__visual img {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .service-item {
+                padding: 32px 24px;
+            }
+            .service-item--featured {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+        }
+
+        /* === EXPERIENCE / GALLERY — Masonry-like editorial spreads === */
+        .experience {
+            padding: 100px 0;
+            background: var(--paper);
+        }
+
+        .experience__header {
+            text-align: center;
+            margin-bottom: 72px;
+        }
+
+        .experience__title {
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            margin-bottom: 12px;
+        }
+
+        .experience__grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-auto-rows: minmax(180px, auto);
+            gap: 16px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-elegant);
+        }
+
+        .gallery-item:hover img,
+        .gallery-item:focus-within img {
+            transform: scale(1.06);
+        }
+
+        .gallery-item__overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(26,26,26,0.7) 0%, transparent 50%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 24px;
+            opacity: 0;
+            transition: opacity var(--transition-elegant);
+        }
+
+        .gallery-item:hover .gallery-item__overlay,
+        .gallery-item:focus-within .gallery-item__overlay {
+            opacity: 1;
+        }
+
+        .gallery-item__title {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            color: #FFFAF0;
+            margin-bottom: 4px;
+        }
+
+        .gallery-item__detail {
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        /* Grid placement for asymmetric layout */
+        .gallery-item--large {
+            grid-column: span 7;
+            grid-row: span 2;
+        }
+        .gallery-item--medium {
+            grid-column: span 5;
+            grid-row: span 1;
+        }
+        .gallery-item--small {
+            grid-column: span 5;
+            grid-row: span 1;
+        }
+        .gallery-item--wide {
+            grid-column: span 5;
+            grid-row: span 2;
+        }
+        .gallery-item--horizontal {
+            grid-column: span 7;
+            grid-row: span 1;
+        }
+
+        /* SVG placeholder illustrations for gallery items */
+        .gallery-placeholder {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .experience {
+                padding: 64px 0;
+            }
+            .experience__grid {
+                grid-template-columns: 1fr;
+                grid-auto-rows: 240px;
+            }
+            .gallery-item--large,
+            .gallery-item--medium,
+            .gallery-item--small,
+            .gallery-item--wide,
+            .gallery-item--horizontal {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+            .gallery-item__overlay {
+                opacity: 1;
+            }
+        }
+
+        /* === EVENTS — Magazine spread: half image, half text === */
+        .events {
+            padding: 0;
+            background: var(--elegant-black);
+        }
+
+        .events__spread {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 600px;
+        }
+
+        .events__visual {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .events__visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-elegant);
+        }
+
+        .events:hover .events__visual img {
+            transform: scale(1.03);
+        }
+
+        /* SVG placeholder for events visual */
+        .events__placeholder-svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .events__content {
+            padding: 80px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .events__label {
+            font-family: var(--font-sans);
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 24px;
+        }
+
+        .events__title {
+            font-family: var(--font-serif);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 400;
+            color: #FFFAF0;
+            line-height: 1.15;
+            margin-bottom: 24px;
+        }
+
+        .events__text {
+            font-family: var(--font-serif);
+            font-style: italic;
+            color: rgba(255,250,240,0.6);
+            margin-bottom: 40px;
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        .events__list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px 32px;
+        }
+
+        .event-type {
+            padding: 20px 0;
+            border-top: 1px solid rgba(255,250,240,0.1);
+        }
+
+        .event-type__name {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            color: #FFFAF0;
+            margin-bottom: 4px;
+        }
+
+        .event-type__desc {
+            font-size: 0.8rem;
+            color: rgba(255,250,240,0.4);
+            line-height: 1.5;
+        }
+
+        .event-type__capacity {
+            font-family: var(--font-sans);
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--gold-dark);
+            margin-top: 6px;
+        }
+
+        @media (max-width: 768px) {
+            .events__spread {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+            .events__visual {
+                min-height: 300px;
+            }
+            .events__content {
+                padding: 48px 24px;
+            }
+            .events__list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* === TESTIMONIALS — Large decorative quotes === */
+        .testimonials {
+            padding: 100px 0;
+            background: var(--light-cream);
+            background-image:
+                url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+        }
+
+        .testimonials__header {
+            text-align: center;
+            margin-bottom: 72px;
+        }
+
+        .testimonials__title {
+            font-size: clamp(2rem, 4.5vw, 3rem);
+            margin-bottom: 12px;
+        }
+
+        .testimonials__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .testimonial {
+            position: relative;
+            padding: 0;
+        }
+
+        /* Decorative large quotation mark */
+        .testimonial__quote-mark {
+            font-family: var(--font-serif);
+            font-size: 8rem;
+            line-height: 0.7;
+            color: var(--rule-color-light);
+            position: absolute;
+            top: -10px;
+            left: -8px;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        .testimonial__text {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text-body);
+            position: relative;
+            z-index: 1;
+            padding-top: 32px;
+            margin-bottom: 24px;
+        }
+
+        .testimonial__author {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .testimonial__name {
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            letter-spacing: 0.5px;
+        }
+
+        .testimonial__event {
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 768px) {
+            .testimonials {
+                padding: 64px 0;
+            }
+            .testimonials__grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+        }
+
+        /* === RESERVATIONS / CONTACT — Elegant form === */
+        .reservations {
+            padding: 100px 0;
+            background: var(--paper);
+        }
+
+        .reservations__grid {
+            display: grid;
+            grid-template-columns: 5fr 7fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .reservations__info {
+            /* Left column: contact information */
+        }
+
+        .reservations__title {
+            font-size: clamp(2rem, 4.5vw, 2.8rem);
+            margin-bottom: 16px;
+        }
+
+        .reservations__text {
+            font-family: var(--font-serif);
+            font-style: italic;
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 40px;
+        }
+
+        .contact-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .contact-item__icon {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            color: var(--gold-dark);
+            margin-top: 2px;
+        }
+
+        .contact-item__label {
+            font-family: var(--font-sans);
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+
+        .contact-item__value {
+            font-family: var(--font-serif);
+            font-size: 1rem;
+            color: var(--charcoal);
+            line-height: 1.5;
+        }
+
+        /* Form */
+        .reservations__form-wrap {
+            background: var(--cream);
+            padding: 48px;
+            border: 1px solid var(--rule-color-light);
+        }
+
+        .form-title {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--charcoal);
+            margin-bottom: 32px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .form-group--full {
+            grid-column: 1 / -1;
+        }
+
+        .form-label {
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        .form-label--required::after {
+            content: ' *';
+            color: var(--coral);
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            color: var(--charcoal);
+            padding: 12px 16px;
+            border: 1px solid var(--rule-color);
+            background: var(--paper);
+            transition: border-color var(--transition-fast);
+            width: 100%;
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--chocolate);
+        }
+
+        .form-select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' stroke='%238A7A6A' stroke-width='2' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            background-size: 18px;
+            padding-right: 40px;
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-submit {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 16px 36px;
+            margin-top: 12px;
+            font-family: var(--font-sans);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: var(--chocolate);
+            color: var(--cream);
+            border: none;
+            cursor: pointer;
+            transition: background var(--transition-base), transform var(--transition-base);
+        }
+
+        .form-submit:hover {
+            background: var(--charcoal);
+            transform: translateY(-1px);
+        }
+
+        .form-submit:focus-visible {
+            outline: 2px solid var(--coral);
+            outline-offset: 3px;
+        }
+
+        .form-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        @media (max-width: 768px) {
+            .reservations {
+                padding: 64px 0;
+            }
+            .reservations__grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+            .reservations__form-wrap {
+                padding: 32px 24px;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* === COLOPHON / FOOTER — Editorial style === */
+        .colophon {
+            background: var(--charcoal);
+            color: rgba(255,250,240,0.6);
+            padding: 64px 0 0;
+        }
+
+        .colophon__inner {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            padding-bottom: 48px;
+        }
+
+        .colophon__brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .colophon__brand-name {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            color: #FFFAF0;
+        }
+
+        .colophon__desc {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-bottom: 24px;
+            max-width: 320px;
+        }
+
+        .colophon__social {
+            display: flex;
+            gap: 12px;
+        }
+
+        .colophon__social-link {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,250,240,0.5);
+            border: 1px solid rgba(255,250,240,0.15);
+            transition: color var(--transition-fast), border-color var(--transition-fast);
+        }
+
+        .colophon__social-link:hover {
+            color: var(--gold);
+            border-color: var(--gold-dark);
+        }
+
+        .colophon__social-link:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 2px;
+        }
+
+        .colophon__social-link svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .colophon__heading {
+            font-family: var(--font-sans);
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255,250,240,0.4);
+            margin-bottom: 20px;
+        }
+
+        .colophon__list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .colophon__link {
+            font-size: 0.9rem;
+            color: rgba(255,250,240,0.6);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        .colophon__link:hover {
+            color: var(--gold);
+        }
+
+        .colophon__link:focus-visible {
+            outline: 1px solid var(--gold);
+            outline-offset: 2px;
+        }
+
+        .colophon__bottom {
+            border-top: 1px solid rgba(255,250,240,0.08);
+            padding: 24px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .colophon__copy {
+            font-size: 0.8rem;
+            color: rgba(255,250,240,0.35);
+        }
+
+        .colophon__legal {
+            font-size: 0.75rem;
+            color: rgba(255,250,240,0.25);
+        }
+
+        @media (max-width: 768px) {
+            .colophon__inner {
+                grid-template-columns: 1fr 1fr;
+                gap: 32px;
+            }
+            .colophon__bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .colophon__inner {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* === SCROLL TO TOP === */
+        .scroll-top {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            width: 44px;
+            height: 44px;
+            background: var(--chocolate);
+            color: var(--cream);
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 900;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(12px);
+            transition: opacity var(--transition-base), transform var(--transition-base), visibility var(--transition-base), background var(--transition-fast);
+        }
+
+        .scroll-top--visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .scroll-top:hover {
+            background: var(--charcoal);
+        }
+
+        .scroll-top:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 3px;
+        }
+
+        .scroll-top svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* === REVEAL ANIMATIONS === */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.8s cubic-bezier(0.25, 0.1, 0.25, 1), transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+
+        .reveal--visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal--delay-1 { transition-delay: 0.1s; }
+        .reveal--delay-2 { transition-delay: 0.2s; }
+        .reveal--delay-3 { transition-delay: 0.3s; }
+        .reveal--delay-4 { transition-delay: 0.4s; }
+
+    </style>
+</head>
+<body>
+
+    <!-- Skip to content -->
+    <a href="#main-content" class="sr-only" style="position:absolute;top:0;left:0;padding:12px;background:var(--coral);color:white;z-index:10000;" onfocus="this.style.clip='auto';this.style.width='auto';this.style.height='auto';this.style.position='fixed';" onblur="this.style.clip='rect(0,0,0,0)';this.style.width='1px';this.style.height='1px';this.style.position='absolute';">Ir al contenido principal</a>
+
+    <!-- ========== NAVIGATION ========== -->
+    <nav class="nav" id="navbar" role="navigation" aria-label="Navegacion principal">
+        <div class="nav__inner">
+            <a href="#" class="nav__brand" aria-label="Negocios Dulces - Inicio">
+                <!-- Elegant ND monogram -->
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <rect width="36" height="36" fill="none" stroke="#8B4513" stroke-width="1.5"/>
+                    <text x="18" y="23" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="14" font-weight="400" fill="#8B4513">ND</text>
+                </svg>
+                <span class="nav__brand-name">Negocios <em>Dulces</em></span>
+            </a>
+
+            <button class="nav__toggle" id="navToggle" aria-label="Abrir menu de navegacion" aria-expanded="false" aria-controls="navMenu">
+                <span class="nav__toggle-bar"></span>
+                <span class="nav__toggle-bar"></span>
+                <span class="nav__toggle-bar"></span>
+            </button>
+
+            <ul class="nav__menu" id="navMenu" role="menubar">
+                <li role="none"><a href="#introduccion" class="nav__link" role="menuitem">Nosotros</a></li>
+                <li role="none"><a href="#servicios" class="nav__link" role="menuitem">Servicios</a></li>
+                <li role="none"><a href="#galeria" class="nav__link" role="menuitem">Galeria</a></li>
+                <li role="none"><a href="#eventos" class="nav__link" role="menuitem">Eventos</a></li>
+                <li role="none"><a href="#testimonios" class="nav__link" role="menuitem">Voces</a></li>
+                <li role="none"><a href="#contacto" class="nav__cta" role="menuitem">Reservar</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile overlay -->
+    <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+
+    <!-- ========== I. COVER / PORTADA ========== -->
+    <section class="cover" id="main-content">
+        <div class="cover__bg" aria-hidden="true">
+            <img src="hero-gourmet.jpg" alt="Platillo gourmet elegante con filet mignon en plato de porcelana blanca, iluminacion dramatica" style="width:100%;height:100%;object-fit:cover;transition:transform 12s ease;">
+        </div>
+        <div class="cover__overlay" style="background:linear-gradient(to top, rgba(26,26,26,0.85) 0%, rgba(26,26,26,0.6) 35%, rgba(26,26,26,0.3) 65%, rgba(26,26,26,0.15) 100%);"></div>
+        <div class="cover__content">
+            <span class="cover__label">Restaurante Gourmet &amp; Eventos Exclusivos en Queretaro</span>
+            <h1 class="cover__title">Transformamos Momentos en <em>Experiencias</em> Unicas</h1>
+            <p class="cover__subtitle">Restaurante gourmet, banquetes exclusivos y eventos personalizados. Cada detalle es una obra maestra culinaria disenada para ti.</p>
+            <div class="cover__actions">
+                <a href="#contacto" class="btn-editorial btn-editorial--primary">Solicitar Cotizacion</a>
+                <a href="#servicios" class="btn-editorial btn-editorial--outline">Descubrir el Menu</a>
+            </div>
+            <div class="cover__stats">
+                <div class="cover__stat">
+                    <div class="cover__stat-value">500+</div>
+                    <div class="cover__stat-label">Eventos Exitosos</div>
+                </div>
+                <div class="cover__stat">
+                    <div class="cover__stat-value">10+</div>
+                    <div class="cover__stat-label">Anos de Excelencia</div>
+                </div>
+                <div class="cover__stat">
+                    <div class="cover__stat-value">25+</div>
+                    <div class="cover__stat-label">Chefs Especializados</div>
+                </div>
+                <div class="cover__stat">
+                    <div class="cover__stat-value">100%</div>
+                    <div class="cover__stat-label">Satisfaccion</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== II. INTRODUCCION ========== -->
+    <section class="intro" id="introduccion" aria-labelledby="intro-title">
+        <div class="intro__inner">
+            <div class="reveal">
+                <span class="section-label">Nuestra Historia</span>
+                <h2 class="heading-serif intro__heading" id="intro-title">Una Tradicion de Excelencia Gastronomica</h2>
+                <p class="subtitle-italic intro__tagline">Donde cada platillo cuenta una historia y cada evento se convierte en un recuerdo eterno</p>
+            </div>
+
+            <div class="editorial-rule" aria-hidden="true">
+                <div class="editorial-rule__ornament"></div>
+            </div>
+
+            <div class="intro__columns reveal reveal--delay-1">
+                <p class="drop-cap">En Negocios Dulces fusionamos la pasion por la gastronomia con la creatividad en eventos. Desde nuestra fundacion, hemos sido el aliado perfecto para quienes buscan experiencias culinarias extraordinarias en Queretaro. Cada platillo lleva nuestra firma de calidad, cada evento refleja nuestra dedicacion.</p>
+                <p>Estamos ubicados en Zibata, la zona mas exclusiva de Queretaro, donde nuestro equipo de chefs y organizadores esta listo para transformar tu vision en una realidad gastronomica inigualable. Utilizamos ingredientes premium y tecnicas de vanguardia para crear experiencias que despiertan todos los sentidos.</p>
+                <p>Nuestra filosofia se sustenta en cuatro pilares fundamentales: la excelencia en cada ingrediente que seleccionamos, la pasion que imprimimos en cada preparacion, el servicio personalizado que supera expectativas y la confianza que mas de 500 eventos exitosos nos respaldan.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== III. MENU / SERVICIOS ========== -->
+    <section class="menu-section" id="servicios" aria-labelledby="services-title">
+        <div class="container">
+            <div class="menu-section__header reveal">
+                <span class="section-label">Nuestros Servicios</span>
+                <h2 class="heading-serif menu-section__title" id="services-title">El Menu de Experiencias</h2>
+                <p class="subtitle-italic menu-section__subtitle">Cada evento es una obra maestra culinaria disenada especialmente para ti</p>
+                <hr class="thin-rule thin-rule--gold thin-rule--short" aria-hidden="true">
+            </div>
+
+            <div class="services-grid">
+                <!-- 01 Restaurante Gourmet -->
+                <article class="service-item reveal reveal--delay-1">
+                    <div class="service-item__number">01</div>
+                    <h3 class="service-item__name">Restaurante Gourmet</h3>
+                    <p class="service-item__desc">Experiencia gastronomica diaria con lo mejor de la cocina mexicana e internacional.</p>
+                    <ul class="service-item__details">
+                        <li class="service-item__detail">Desayunos desde 8:00 AM</li>
+                        <li class="service-item__detail">Menu del dia ejecutivo</li>
+                        <li class="service-item__detail">Cenas romanticas</li>
+                        <li class="service-item__detail">Servicio a la carta</li>
+                    </ul>
+                </article>
+
+                <!-- 02 Banquetes Corporativos -->
+                <article class="service-item reveal reveal--delay-2">
+                    <div class="service-item__number">02</div>
+                    <h3 class="service-item__name">Banquetes Corporativos</h3>
+                    <p class="service-item__desc">Servicio profesional para eventos empresariales que dejan huella.</p>
+                    <ul class="service-item__details">
+                        <li class="service-item__detail">Desayunos ejecutivos</li>
+                        <li class="service-item__detail">Coffee breaks gourmet</li>
+                        <li class="service-item__detail">Comidas de negocios</li>
+                        <li class="service-item__detail">Cenas de gala</li>
+                    </ul>
+                </article>
+
+                <!-- 03 Bodas de Ensueno -->
+                <article class="service-item reveal reveal--delay-1">
+                    <div class="service-item__number">03</div>
+                    <h3 class="service-item__name">Bodas de Ensueno</h3>
+                    <p class="service-item__desc">Creamos el banquete perfecto para tu dia mas especial con menus personalizados.</p>
+                    <ul class="service-item__details">
+                        <li class="service-item__detail">Menu personalizado</li>
+                        <li class="service-item__detail">Estaciones de comida</li>
+                        <li class="service-item__detail">Mesa de postres</li>
+                        <li class="service-item__detail">Barra de bebidas</li>
+                    </ul>
+                </article>
+
+                <!-- 04 Celebraciones Especiales -->
+                <article class="service-item reveal reveal--delay-2">
+                    <div class="service-item__number">04</div>
+                    <h3 class="service-item__name">Celebraciones Especiales</h3>
+                    <p class="service-item__desc">Cumpleanos, aniversarios y momentos inolvidables con el mejor servicio.</p>
+                    <ul class="service-item__details">
+                        <li class="service-item__detail">Fiestas tematicas</li>
+                        <li class="service-item__detail">XV anos y graduaciones</li>
+                        <li class="service-item__detail">Baby showers</li>
+                        <li class="service-item__detail">Reuniones familiares</li>
+                    </ul>
+                </article>
+
+                <!-- 05 Featured: Reposteria Artesanal (full width with image) -->
+                <article class="service-item service-item--featured reveal reveal--delay-1">
+                    <div class="service-item__visual">
+                        <img src="dessert-artisan.jpg" alt="Postre artesanal gourmet con chocolate, decoracion de oro comestible y frutos rojos sobre plato de pizarra" style="width:100%;height:100%;object-fit:cover;border-radius:2px;">
+                    </div>
+                    <div>
+                        <div class="service-item__number">05</div>
+                        <h3 class="service-item__name">Reposteria Artesanal</h3>
+                        <p class="service-item__desc">Postres y pasteles que son verdaderas obras de arte hechas con ingredientes premium.</p>
+                        <ul class="service-item__details">
+                            <li class="service-item__detail">Pasteles personalizados</li>
+                            <li class="service-item__detail">Mesa de dulces</li>
+                            <li class="service-item__detail">Macarons y petit fours</li>
+                            <li class="service-item__detail">Postres signature</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- 06 Catering Movil -->
+                <article class="service-item reveal reveal--delay-1">
+                    <div class="service-item__number">06</div>
+                    <h3 class="service-item__name">Catering Movil</h3>
+                    <p class="service-item__desc">Llevamos la experiencia gourmet donde la necesites con servicio completo.</p>
+                    <ul class="service-item__details">
+                        <li class="service-item__detail">Food trucks equipados</li>
+                        <li class="service-item__detail">Servicio a domicilio</li>
+                        <li class="service-item__detail">Montaje completo</li>
+                        <li class="service-item__detail">Personal especializado</li>
+                    </ul>
+                </article>
+
+                <!-- 07 Menus Especializados -->
+                <article class="service-item reveal reveal--delay-2">
+                    <div class="service-item__number">07</div>
+                    <h3 class="service-item__name">Menus Especializados</h3>
+                    <p class="service-item__desc">Opciones para todos los gustos y necesidades alimentarias.</p>
+                    <ul class="service-item__details">
+                        <li class="service-item__detail">Menu vegetariano</li>
+                        <li class="service-item__detail">Opciones veganas</li>
+                        <li class="service-item__detail">Sin gluten</li>
+                        <li class="service-item__detail">Cocina internacional</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== IV. EXPERIENCIA / GALERIA ========== -->
+    <section class="experience" id="galeria" aria-labelledby="gallery-title">
+        <div class="container container--wide">
+            <div class="experience__header reveal">
+                <span class="section-label">Nuestra Galeria</span>
+                <h2 class="heading-serif experience__title" id="gallery-title">Momentos que Creamos</h2>
+                <p class="subtitle-italic">Cada evento cuenta una historia unica de sabor, elegancia y celebracion</p>
+                <hr class="thin-rule thin-rule--gold thin-rule--short" aria-hidden="true">
+            </div>
+
+            <div class="experience__grid">
+                <!-- 1: Boda — large -->
+                <div class="gallery-item gallery-item--large reveal" tabindex="0" role="figure" aria-label="Boda Jardin Primaveral - 250 invitados, Menu 5 tiempos">
+                    <svg class="gallery-placeholder" viewBox="0 0 700 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
+                        <rect width="700" height="500" fill="#FFF5E1"/>
+                        <circle cx="350" cy="200" r="120" fill="rgba(255,215,0,0.1)" stroke="#D4B896" stroke-width="1"/>
+                        <circle cx="350" cy="200" r="80" fill="rgba(255,107,53,0.06)"/>
+                        <path d="M310 280 L350 180 L390 280 Z" fill="rgba(255,105,180,0.08)" stroke="#D4B896" stroke-width="1"/>
+                        <circle cx="350" cy="180" r="30" fill="rgba(255,215,0,0.1)" stroke="#B8960F" stroke-width="1"/>
+                        <path d="M250 350 Q350 320 450 350" stroke="#D4B896" stroke-width="1" fill="none"/>
+                        <text x="350" y="430" text-anchor="middle" font-family="Georgia,serif" font-size="18" fill="#8B4513" opacity="0.4">Boda Primaveral</text>
+                    </svg>
+                    <div class="gallery-item__overlay">
+                        <p class="gallery-item__title">Boda Jardin Primaveral</p>
+                        <p class="gallery-item__detail">250 invitados &bull; Menu 5 tiempos</p>
+                    </div>
+                </div>
+
+                <!-- 2: Corporativo — medium -->
+                <div class="gallery-item gallery-item--medium reveal reveal--delay-1" tabindex="0" role="figure" aria-label="Evento Corporativo - Tech Summit 2024">
+                    <svg class="gallery-placeholder" viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
+                        <rect width="400" height="260" fill="#2C2C2C"/>
+                        <rect x="40" y="60" width="320" height="130" fill="none" stroke="rgba(255,215,0,0.15)" stroke-width="1"/>
+                        <circle cx="120" cy="125" r="28" fill="rgba(255,107,53,0.12)"/>
+                        <circle cx="200" cy="125" r="28" fill="rgba(255,215,0,0.12)"/>
+                        <circle cx="280" cy="125" r="28" fill="rgba(255,105,180,0.12)"/>
+                        <text x="200" y="230" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="rgba(255,250,240,0.3)">Corporativo Premium</text>
+                    </svg>
+                    <div class="gallery-item__overlay">
+                        <p class="gallery-item__title">Evento Corporativo</p>
+                        <p class="gallery-item__detail">Tech Summit 2024</p>
+                    </div>
+                </div>
+
+                <!-- 3: Aniversario — small -->
+                <div class="gallery-item gallery-item--small reveal reveal--delay-2" tabindex="0" role="figure" aria-label="Aniversario 50 Anos - Cena de gala, 100 personas">
+                    <svg class="gallery-placeholder" viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
+                        <rect width="400" height="260" fill="#FAEBD7"/>
+                        <ellipse cx="200" cy="140" rx="120" ry="45" fill="none" stroke="#B8960F" stroke-width="1" stroke-dasharray="6 4"/>
+                        <circle cx="200" cy="100" r="36" fill="rgba(255,107,53,0.05)" stroke="#D4B896" stroke-width="1"/>
+                        <text x="200" y="108" text-anchor="middle" font-family="Georgia,serif" font-size="28" fill="#8B4513" opacity="0.5">50</text>
+                        <path d="M120 180 Q200 160 280 180" stroke="#B8960F" stroke-width="1" fill="none"/>
+                    </svg>
+                    <div class="gallery-item__overlay">
+                        <p class="gallery-item__title">Aniversario 50 Anos</p>
+                        <p class="gallery-item__detail">Cena de gala &bull; 100 personas</p>
+                    </div>
+                </div>
+
+                <!-- 4: XV Anos — horizontal -->
+                <div class="gallery-item gallery-item--horizontal reveal reveal--delay-1" tabindex="0" role="figure" aria-label="XV Anos Isabella - Tematica Jardin Encantado">
+                    <svg class="gallery-placeholder" viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
+                        <rect width="700" height="260" fill="#FFF0F5"/>
+                        <circle cx="350" cy="130" r="70" fill="rgba(255,105,180,0.08)" stroke="#FF69B4" stroke-width="1"/>
+                        <circle cx="350" cy="130" r="45" fill="rgba(255,20,147,0.04)"/>
+                        <path d="M310 90 L350 50 L390 90" stroke="#FF69B4" stroke-width="1" fill="none"/>
+                        <circle cx="220" cy="170" r="15" fill="rgba(255,215,0,0.1)"/>
+                        <circle cx="480" cy="160" r="10" fill="rgba(255,107,53,0.08)"/>
+                        <text x="350" y="230" text-anchor="middle" font-family="Georgia,serif" font-size="14" fill="#FF69B4" opacity="0.4">XV Anos</text>
+                    </svg>
+                    <div class="gallery-item__overlay">
+                        <p class="gallery-item__title">XV Anos Isabella</p>
+                        <p class="gallery-item__detail">Tematica Jardin Encantado</p>
+                    </div>
+                </div>
+
+                <!-- 5: Premiacion — wide -->
+                <div class="gallery-item gallery-item--wide reveal reveal--delay-2" tabindex="0" role="figure" aria-label="Premiacion Anual BMW - Cocktail y Cena formal">
+                    <svg class="gallery-placeholder" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
+                        <rect width="400" height="500" fill="#1a1a1a"/>
+                        <rect x="50" y="80" width="300" height="340" fill="none" stroke="rgba(255,215,0,0.12)" stroke-width="1"/>
+                        <circle cx="200" cy="220" r="50" fill="rgba(255,215,0,0.06)" stroke="#B8960F" stroke-width="1"/>
+                        <path d="M185 220 L200 190 L215 220 L200 230 Z" fill="rgba(255,215,0,0.1)" stroke="#B8960F" stroke-width="1"/>
+                        <line x1="120" y1="310" x2="280" y2="310" stroke="rgba(255,215,0,0.1)" stroke-width="1"/>
+                        <line x1="140" y1="330" x2="260" y2="330" stroke="rgba(255,215,0,0.07)" stroke-width="1"/>
+                        <text x="200" y="440" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="rgba(255,215,0,0.25)">Gala Corporativa</text>
+                    </svg>
+                    <div class="gallery-item__overlay">
+                        <p class="gallery-item__title">Premiacion Anual BMW</p>
+                        <p class="gallery-item__detail">Cocktail &amp; Cena formal</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== V. EVENTOS — Magazine spread ========== -->
+    <section class="events" id="eventos" aria-labelledby="events-title">
+        <div class="events__spread">
+            <div class="events__visual">
+                <img src="banquet-luxury.jpg" alt="Salon de banquetes de lujo con mesas decoradas elegantemente, candelabros de cristal y flores" style="width:100%;height:100%;object-fit:cover;">
+            </div>
+            <div class="events__content">
+                <span class="events__label">Tipos de Eventos</span>
+                <h2 class="events__title" id="events-title">Eventos para Cada Ocasion</h2>
+                <p class="events__text">Desde reuniones intimas hasta grandes celebraciones, creamos experiencias a la medida de tus suenos.</p>
+
+                <ul class="events__list">
+                    <li class="event-type">
+                        <h3 class="event-type__name">Bodas &amp; Compromisos</h3>
+                        <p class="event-type__desc">Menus de 3 a 7 tiempos, barra premium y mesa de postres artesanal.</p>
+                        <p class="event-type__capacity">50 - 500 personas</p>
+                    </li>
+                    <li class="event-type">
+                        <h3 class="event-type__name">Corporativos</h3>
+                        <p class="event-type__desc">Coffee breaks gourmet, almuerzos ejecutivos y cenas de gala.</p>
+                        <p class="event-type__capacity">20 - 300 personas</p>
+                    </li>
+                    <li class="event-type">
+                        <h3 class="event-type__name">Celebraciones Familiares</h3>
+                        <p class="event-type__desc">Cumpleanos, XV anos, bautizos y reuniones familiares con estilo.</p>
+                        <p class="event-type__capacity">10 - 200 personas</p>
+                    </li>
+                    <li class="event-type">
+                        <h3 class="event-type__name">Cenas Privadas</h3>
+                        <p class="event-type__desc">Experiencias exclusivas con menu de autor y maridaje personalizado.</p>
+                        <p class="event-type__capacity">2 - 30 personas</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== VI. TESTIMONIOS ========== -->
+    <section class="testimonials" id="testimonios" aria-labelledby="testimonials-title">
+        <div class="container">
+            <div class="testimonials__header reveal">
+                <span class="section-label">Voces de Nuestros Clientes</span>
+                <h2 class="heading-serif testimonials__title" id="testimonials-title">Lo Que Dicen de Nosotros</h2>
+                <p class="subtitle-italic">Historias reales de momentos extraordinarios</p>
+                <hr class="thin-rule thin-rule--gold thin-rule--short" aria-hidden="true">
+            </div>
+
+            <div class="testimonials__grid">
+                <blockquote class="testimonial reveal reveal--delay-1">
+                    <span class="testimonial__quote-mark" aria-hidden="true">&ldquo;</span>
+                    <p class="testimonial__text">Negocios Dulces hizo de nuestra boda un sueno hecho realidad. Cada platillo fue una obra de arte, y el servicio supero todas nuestras expectativas. Nuestros invitados siguen hablando de la comida meses despues.</p>
+                    <footer class="testimonial__author">
+                        <cite class="testimonial__name">Ana y Carlos Rodriguez</cite>
+                        <span class="testimonial__event">Boda Jardin Primaveral &bull; 250 invitados</span>
+                    </footer>
+                </blockquote>
+
+                <blockquote class="testimonial reveal reveal--delay-2">
+                    <span class="testimonial__quote-mark" aria-hidden="true">&ldquo;</span>
+                    <p class="testimonial__text">Para nuestro evento corporativo anual, necesitabamos un servicio impecable. El equipo de ND entendio nuestra vision desde el primer momento y la ejecutaron con una profesionalidad extraordinaria.</p>
+                    <footer class="testimonial__author">
+                        <cite class="testimonial__name">Lic. Fernando Mendez</cite>
+                        <span class="testimonial__event">Director General, Tech Summit 2024</span>
+                    </footer>
+                </blockquote>
+
+                <blockquote class="testimonial reveal reveal--delay-3">
+                    <span class="testimonial__quote-mark" aria-hidden="true">&ldquo;</span>
+                    <p class="testimonial__text">La reposteria artesanal de Negocios Dulces es simplemente excepcional. Cada postre es una obra maestra visual y de sabor. Mi pastel de cumpleanos fue la estrella de la fiesta.</p>
+                    <footer class="testimonial__author">
+                        <cite class="testimonial__name">Isabella Torres Vega</cite>
+                        <span class="testimonial__event">Celebracion de XV Anos</span>
+                    </footer>
+                </blockquote>
+
+                <blockquote class="testimonial reveal reveal--delay-4">
+                    <span class="testimonial__quote-mark" aria-hidden="true">&ldquo;</span>
+                    <p class="testimonial__text">Llevamos tres anos confiando en Negocios Dulces para nuestros eventos trimestrales. La consistencia en la calidad y la creatividad en cada menu son incomparables en Queretaro.</p>
+                    <footer class="testimonial__author">
+                        <cite class="testimonial__name">Ing. Patricia Solis</cite>
+                        <span class="testimonial__event">Directora de RRHH, Grupo Industrial QRO</span>
+                    </footer>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== VII. RESERVACIONES / CONTACTO ========== -->
+    <section class="reservations" id="contacto" aria-labelledby="contact-title">
+        <div class="container">
+            <div class="reservations__grid">
+                <div class="reservations__info reveal">
+                    <span class="section-label">Contacto</span>
+                    <h2 class="heading-serif reservations__title" id="contact-title">Hagamos Tu Evento Realidad</h2>
+                    <p class="reservations__text">Estamos en Zibata, la zona mas exclusiva de Queretaro. Nuestro equipo esta listo para crear la experiencia gastronomica perfecta para tu evento.</p>
+
+                    <ul class="contact-list">
+                        <li class="contact-item">
+                            <svg class="contact-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <div>
+                                <p class="contact-item__label">Ubicacion</p>
+                                <p class="contact-item__value">Circuito Valle de la Luna 2, Zibata, Queretaro</p>
+                            </div>
+                        </li>
+                        <li class="contact-item">
+                            <svg class="contact-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <div>
+                                <p class="contact-item__label">Telefono / WhatsApp</p>
+                                <p class="contact-item__value">+52 (442) 123 4567</p>
+                            </div>
+                        </li>
+                        <li class="contact-item">
+                            <svg class="contact-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                            <div>
+                                <p class="contact-item__label">Email</p>
+                                <p class="contact-item__value">contacto@negociosdulces.com.mx</p>
+                            </div>
+                        </li>
+                        <li class="contact-item">
+                            <svg class="contact-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            <div>
+                                <p class="contact-item__label">Horario de Atencion</p>
+                                <p class="contact-item__value">Lunes a Domingo &bull; 9:00 - 20:00</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="reservations__form-wrap reveal reveal--delay-2">
+                    <h3 class="form-title">Solicita tu Cotizacion</h3>
+                    <form id="contactForm" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label form-label--required" for="name">Nombre completo</label>
+                                <input type="text" class="form-input" id="name" name="name" autocomplete="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label form-label--required" for="email">Email</label>
+                                <input type="email" class="form-input" id="email" name="email" autocomplete="email" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label form-label--required" for="phone">Telefono</label>
+                                <input type="tel" class="form-input" id="phone" name="phone" autocomplete="tel" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label form-label--required" for="eventType">Tipo de evento</label>
+                                <select class="form-select" id="eventType" name="eventType" required>
+                                    <option value="">Seleccionar...</option>
+                                    <option value="boda">Boda</option>
+                                    <option value="corporativo">Corporativo</option>
+                                    <option value="xv">XV Anos</option>
+                                    <option value="cumpleanos">Cumpleanos</option>
+                                    <option value="baby-shower">Baby Shower</option>
+                                    <option value="graduacion">Graduacion</option>
+                                    <option value="cena-privada">Cena Privada</option>
+                                    <option value="catering">Catering</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label form-label--required" for="eventDate">Fecha del evento</label>
+                                <input type="date" class="form-input" id="eventDate" name="eventDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label form-label--required" for="guests">Numero de invitados</label>
+                                <input type="number" class="form-input" id="guests" name="guests" min="1" required>
+                            </div>
+                        </div>
+                        <div class="form-group form-group--full" style="margin-bottom:20px;">
+                            <label class="form-label" for="details">Detalles adicionales</label>
+                            <textarea class="form-textarea" id="details" name="details" rows="4"></textarea>
+                        </div>
+                        <!-- Honeypot anti-spam field — hidden from real users -->
+                        <div style="position:absolute;left:-9999px;top:-9999px;" aria-hidden="true">
+                            <label for="website">Website</label>
+                            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                        </div>
+                        <button type="submit" class="form-submit" id="submitBtn">
+                            Enviar Solicitud
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== VIII. COLOPHON / FOOTER ========== -->
+    <footer class="colophon" role="contentinfo">
+        <div class="container">
+            <div class="colophon__inner">
+                <div>
+                    <div class="colophon__brand">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <rect width="32" height="32" fill="none" stroke="rgba(255,250,240,0.3)" stroke-width="1"/>
+                            <text x="16" y="20" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="12" fill="rgba(255,250,240,0.7)">ND</text>
+                        </svg>
+                        <span class="colophon__brand-name">Negocios Dulces</span>
+                    </div>
+                    <p class="colophon__desc">
+                        Restaurante gourmet, banquetes exclusivos y eventos personalizados en Queretaro. Transformamos cada momento en una experiencia gastronomica unica.
+                    </p>
+                    <div class="colophon__social">
+                        <a href="#" class="colophon__social-link" aria-label="Siguenos en Facebook">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <a href="#" class="colophon__social-link" aria-label="Siguenos en Instagram">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                        </a>
+                        <a href="#" class="colophon__social-link" aria-label="Contactanos por WhatsApp">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="colophon__heading">Servicios</h4>
+                    <ul class="colophon__list">
+                        <li><a href="#servicios" class="colophon__link">Restaurante Gourmet</a></li>
+                        <li><a href="#servicios" class="colophon__link">Banquetes</a></li>
+                        <li><a href="#servicios" class="colophon__link">Catering</a></li>
+                        <li><a href="#servicios" class="colophon__link">Reposteria</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="colophon__heading">Eventos</h4>
+                    <ul class="colophon__list">
+                        <li><a href="#eventos" class="colophon__link">Bodas</a></li>
+                        <li><a href="#eventos" class="colophon__link">Corporativos</a></li>
+                        <li><a href="#eventos" class="colophon__link">Celebraciones</a></li>
+                        <li><a href="#eventos" class="colophon__link">Cenas Privadas</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="colophon__heading">Contacto</h4>
+                    <ul class="colophon__list">
+                        <li><span class="colophon__link">Circuito Valle de la Luna 2</span></li>
+                        <li><span class="colophon__link">Zibata, Queretaro</span></li>
+                        <li><span class="colophon__link">+52 (442) 123 4567</span></li>
+                        <li><span class="colophon__link">contacto@negociosdulces.com.mx</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="colophon__bottom">
+                <p class="colophon__copy">&copy; 2024 Negocios Dulces S.A. de C.V. &bull; Todos los derechos reservados.</p>
+                <p class="colophon__legal">RFC: NDU141105FJ8 &bull; Circuito Valle de la Luna 2, Zibata, Queretaro, Mexico</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== SCROLL TO TOP ========== -->
+    <button class="scroll-top" id="scrollTop" aria-label="Volver al inicio">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="18 15 12 9 6 15"/>
+        </svg>
+    </button>
+
+    <!-- ========== SCRIPTS ========== -->
+    <script>
+        (function() {
+            'use strict';
+
+            // --- Mobile Navigation ---
+            var navToggle = document.getElementById('navToggle');
+            var navMenu = document.getElementById('navMenu');
+            var navOverlay = document.getElementById('navOverlay');
+            var isMenuOpen = false;
+
+            function openMenu() {
+                isMenuOpen = true;
+                navMenu.classList.add('nav__menu--open');
+                navToggle.classList.add('nav__toggle--active');
+                navToggle.setAttribute('aria-expanded', 'true');
+                navToggle.setAttribute('aria-label', 'Cerrar menu de navegacion');
+                navOverlay.classList.add('nav-overlay--visible');
+                navOverlay.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeMenu() {
+                isMenuOpen = false;
+                navMenu.classList.remove('nav__menu--open');
+                navToggle.classList.remove('nav__toggle--active');
+                navToggle.setAttribute('aria-expanded', 'false');
+                navToggle.setAttribute('aria-label', 'Abrir menu de navegacion');
+                navOverlay.classList.remove('nav-overlay--visible');
+                navOverlay.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            }
+
+            navToggle.addEventListener('click', function() {
+                if (isMenuOpen) { closeMenu(); } else { openMenu(); }
+            });
+
+            navOverlay.addEventListener('click', closeMenu);
+
+            // Close on Escape
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && isMenuOpen) {
+                    closeMenu();
+                    navToggle.focus();
+                }
+            });
+
+            // Close menu on link click (mobile)
+            var navLinks = navMenu.querySelectorAll('a');
+            navLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    if (isMenuOpen) closeMenu();
+                });
+            });
+
+            // --- Scroll: Navbar style + scroll-to-top ---
+            var navbar = document.getElementById('navbar');
+            var scrollTop = document.getElementById('scrollTop');
+            var lastScroll = 0;
+
+            function handleScroll() {
+                var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+                if (currentScroll > 60) {
+                    navbar.classList.add('nav--scrolled');
+                } else {
+                    navbar.classList.remove('nav--scrolled');
+                }
+
+                if (currentScroll > 400) {
+                    scrollTop.classList.add('scroll-top--visible');
+                } else {
+                    scrollTop.classList.remove('scroll-top--visible');
+                }
+
+                lastScroll = currentScroll;
+            }
+
+            window.addEventListener('scroll', handleScroll, { passive: true });
+            handleScroll();
+
+            scrollTop.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // --- Reveal on Scroll (Intersection Observer) ---
+            var reveals = document.querySelectorAll('.reveal');
+
+            if ('IntersectionObserver' in window) {
+                var revealObserver = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('reveal--visible');
+                            revealObserver.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.12,
+                    rootMargin: '0px 0px -40px 0px'
+                });
+
+                reveals.forEach(function(el) {
+                    revealObserver.observe(el);
+                });
+            } else {
+                reveals.forEach(function(el) {
+                    el.classList.add('reveal--visible');
+                });
+            }
+
+            // --- Contact Form Validation ---
+            var contactForm = document.getElementById('contactForm');
+            var submitBtn = document.getElementById('submitBtn');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    var isValid = true;
+                    var requiredFields = contactForm.querySelectorAll('[required]');
+
+                    // Clear previous errors
+                    contactForm.querySelectorAll('.form-error').forEach(function(err) { err.remove(); });
+                    contactForm.querySelectorAll('.form-input, .form-select').forEach(function(inp) {
+                        inp.style.borderColor = '';
+                    });
+
+                    requiredFields.forEach(function(field) {
+                        if (!field.value.trim()) {
+                            isValid = false;
+                            field.style.borderColor = '#FF6B35';
+                            var error = document.createElement('span');
+                            error.className = 'form-error';
+                            error.style.cssText = 'display:block;font-size:0.75rem;color:#FF6B35;margin-top:4px;';
+                            error.textContent = 'Este campo es requerido';
+                            error.setAttribute('role', 'alert');
+                            field.parentNode.appendChild(error);
+                        }
+                    });
+
+                    var email = document.getElementById('email');
+                    if (email && email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+                        isValid = false;
+                        email.style.borderColor = '#FF6B35';
+                        var error = document.createElement('span');
+                        error.className = 'form-error';
+                        error.style.cssText = 'display:block;font-size:0.75rem;color:#FF6B35;margin-top:4px;';
+                        error.textContent = 'Ingresa un email valido';
+                        error.setAttribute('role', 'alert');
+                        email.parentNode.appendChild(error);
+                    }
+
+                    if (!isValid) {
+                        var firstError = contactForm.querySelector('[style*="border-color"]');
+                        if (firstError) firstError.focus();
+                        return;
+                    }
+
+                    // Submit to backend
+                    var originalHTML = submitBtn.innerHTML;
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Enviando...';
+
+                    var nameInput = document.getElementById('name');
+                    var emailInput = document.getElementById('email');
+                    var messageInput = document.getElementById('details');
+
+                    var data = {
+                        site: 'negocios-dulces',
+                        name: nameInput ? nameInput.value.trim() : '',
+                        email: emailInput ? emailInput.value.trim() : '',
+                        phone: document.getElementById('phone') ? document.getElementById('phone').value.trim() : '',
+                        service: document.getElementById('eventType') ? document.getElementById('eventType').value : '',
+                        message: messageInput ? messageInput.value.trim() : '',
+                        eventDate: document.getElementById('eventDate') ? document.getElementById('eventDate').value : '',
+                        guests: document.getElementById('guests') ? document.getElementById('guests').value : '',
+                        website: document.getElementById('website') ? document.getElementById('website').value : ''
+                    };
+
+                    try {
+                    var _mrcpt = 'eventos@negociosdulces.mx';
+                    var _msubj = '[Negocios Dulces] Nuevo contacto de ' + data.name;
+                    var _mlines = ['Nombre: ' + data.name, 'Email: ' + data.email];
+                    if (data.company) _mlines.push('Empresa: ' + data.company);
+                    if (data.service) _mlines.push('Servicio: ' + data.service);
+                    _mlines.push('', 'Mensaje:', data.message);
+                    var _murl = 'mailto:' + _mrcpt + '?subject=' + encodeURIComponent(_msubj) + '&body=' + encodeURIComponent(_mlines.join('
+'));
+                    window.location.href = _murl;
+                    form.reset();
+                    showToast(toast, 4500);
+                } catch (err) {
+                    showToast(toastError, 5000);
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalHTML;
+                }
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
