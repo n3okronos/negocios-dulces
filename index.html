@@ -2302,8 +2302,7 @@
                     if (data.company) _mlines.push('Empresa: ' + data.company);
                     if (data.service) _mlines.push('Servicio: ' + data.service);
                     _mlines.push('', 'Mensaje:', data.message);
-                    var _murl = 'mailto:' + _mrcpt + '?subject=' + encodeURIComponent(_msubj) + '&body=' + encodeURIComponent(_mlines.join('
-'));
+                    var _murl = 'mailto:' + _mrcpt + '?subject=' + encodeURIComponent(_msubj) + '&body=' + encodeURIComponent(_mlines.join('\n'));
                     window.location.href = _murl;
                     form.reset();
                     showToast(toast, 4500);
